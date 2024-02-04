@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import * as math from 'mathjs';
 
 function App() {
   const [input, setInput] = useState('');
@@ -8,7 +9,7 @@ function App() {
   const handleClick = (value) => {
     if (value === '=') {
       try {
-        setResult(eval(input));
+        setResult(math.evaluate(input));
       } catch (error) {
         setResult('Error');
       }
@@ -34,7 +35,8 @@ function App() {
       return 'leftSideButton';
       case '=':
       return 'leftSideButton';
-  
+      default:
+        return;
     }
     
 
