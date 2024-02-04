@@ -4,24 +4,13 @@
     justify-content: center;
     align-items: center;
     border: 5px solid green;
-    flex-direction: column;
-}
-.container .display{
-    /* border: 1px solid rgb(225, 241, 100); */
-    width: 40vw;
-    height: 20vh;
-    background-color: rgb(82, 79, 79);
-    color: white;
-    padding: 10px;
-    text-align: right;
-    font-size:xxx-large;
 }
 .container .cal{
     display: flex;
     flex-wrap: wrap;
     width: 40vw;
     height:50vh;
-    /* border: 1px solid rgb(0, 49, 128); */
+    border: 1px solid rgb(0, 49, 128);
     align-content: flex-start;
     /* align-items: flex-start; */
 }
@@ -33,7 +22,7 @@
     flex: 0 0 25%;
     /* width: 50px; */
     height: 66px;
-    border: 1px solid rgb(137, 137, 139);;
+    /* border: 1px solid rgb(171, 167, 167); */
     /* border:none; */
     /* box-shadow: ; */
     font-size: medium;
@@ -41,10 +30,5 @@
 }
 .cal button.zeroButton{
     flex-grow:2;
-    /* background-color: orange; */
-}
-
-.cal button.leftSideButton{
-    /* flex-grow:2; */
     background-color: orange;
 }

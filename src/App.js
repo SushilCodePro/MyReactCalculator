@@ -1,23 +1,58 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState(0);
+
+  const handleClick = (value) => {
+    if (value === '=') {
+      try {
+        setResult(eval(input));
+      } catch (error) {
+        setResult('Error');
+      }
+    } else if (value === 'C') {
+      setInput('');
+      setResult(0);
+    } else {
+      setInput((prevInput) => prevInput + value);
+    }
+  };
+  function getButtonclassName(btn){
+    switch(btn){
+      case '0':
+      return 'zeroButton';
+      case '/':
+      return 'leftSideButton';
+      case '*':
+      return 'leftSideButton';
+      case '-':
+      return 'leftSideButton';
+      case '+':
+
+      return 'leftSideButton';
+      case '=':
+      return 'leftSideButton';
+  
+    }
+    
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="display">
+        <div className="input">{input}</div>
+        <div className="result">{result}</div>
+      </div>
+      <div className="cal">
+        {['C', '+/-', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='].map((btn) => (
+          <button key={btn} onClick={() => handleClick(btn)} className={getButtonclassName(btn)}>
+            {btn}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
